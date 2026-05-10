@@ -1,0 +1,73 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Button from '~/components/ui/Button.astro';
+---
+<BaseLayout
+  title="Application Received"
+  description="Your application to the Miccosukee Yacht Club has been received."
+  active="apply"
+>
+  <section class="page">
+    <div class="container">
+      <div class="inner">
+        <img src="/assets/compass-rose.svg" alt="" width="80" height="80" class="icon" />
+        <span class="eyebrow-rule">Membership Committee</span>
+        <h1>Application Received</h1>
+        <p class="lead">
+          Your application has been noted. The Committee will review it at its next
+          meeting, the timing of which is not presently scheduled.
+        </p>
+        <p class="body-note">
+          You may expect a reply in due course, or upon the Committee's next lake outing,
+          whichever occurs first.
+        </p>
+        <div class="actions">
+          <Button href="/" variant="primary">Return Home</Button>
+          <Button href="/log" variant="ghost">Read the Log</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page {
+  background: var(--bg-deep);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-10);
+}
+.container { width: 100%; }
+.inner {
+  max-width: 540px;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--fg-on-deep);
+}
+.icon { margin-inline: auto; margin-bottom: var(--space-5); opacity: 0.8; }
+.eyebrow-rule { color: var(--brass-200); }
+.eyebrow-rule::before, .eyebrow-rule::after { background: var(--brass-500); }
+h1 {
+  color: var(--sail-50);
+  font-size: var(--fs-h2);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.lead { color: var(--fg-on-deep-muted); max-width: 46ch; margin-inline: auto; }
+.body-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--fg-on-deep-muted);
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+}
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-top: var(--space-6);
+  flex-wrap: wrap;
+}
+</style>

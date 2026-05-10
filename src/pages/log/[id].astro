@@ -1,0 +1,95 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Ornament from '~/components/ui/Ornament.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('log');
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+const d = entry.data.date;
+const formattedDate = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.excerpt}
+  active="log"
+>
+
+  <section class="entry-header">
+    <div class="container">
+      <a href="/log" class="back-link">&larr; Back to the Log</a>
+      <div class="entry-date">{formattedDate}</div>
+      <h1>{entry.data.title}</h1>
+      <p class="lead entry-lead">{entry.data.excerpt}</p>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="narrow prose">
+      <Content />
+    </div>
+  </article>
+
+  <Ornament />
+
+  <section class="entry-nav">
+    <div class="container">
+      <a href="/log" class="back-link">&larr; All Log Entries</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.entry-header {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  padding-block: var(--space-9) var(--space-8);
+}
+.entry-header h1 {
+  color: var(--sail-50);
+  font-size: clamp(1.8rem, 4vw, var(--fs-h1));
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  max-width: 18ch;
+}
+.entry-lead {
+  color: var(--fg-on-deep-muted);
+  max-width: 58ch;
+}
+.back-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--brass-200);
+  text-decoration: none;
+  margin-bottom: var(--space-5);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.back-link:hover { color: var(--sail-50); }
+.entry-date {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-500);
+}
+.entry-nav {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+</style>

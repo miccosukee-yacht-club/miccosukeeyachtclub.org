@@ -1,0 +1,140 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Signal flags">
+  
+  
+  <g transform="translate(20 20)">
+    <rect width="80" height="60" fill="#fff" stroke="#0a2240"></rect>
+    <polygon points="80,0 80,60 50,30" fill="#1d4775"></polygon>
+    <text class="lbl" x="40" y="80">A · ALFA</text>
+  </g>
+  
+  <g transform="translate(120 20)">
+    <polygon points="0,0 80,0 50,30 80,60 0,60" fill="#c0392b" stroke="#0a2240"></polygon>
+    <text class="lbl" x="40" y="80">B · BRAVO</text>
+  </g>
+  
+  <g transform="translate(220 20)">
+    <rect width="80" height="60" fill="#1d4775" stroke="#0a2240"></rect>
+    <line x1="0" y1="0" x2="80" y2="60" stroke="#fff" stroke-width="14"></line>
+    <line x1="80" y1="0" x2="0" y2="60" stroke="#fff" stroke-width="14"></line>
+    <text class="lbl" x="40" y="80">M · MIKE</text>
+  </g>
+  
+  <g transform="translate(320 20)">
+    <rect width="80" height="60" fill="#e8b84a" stroke="#0a2240"></rect>
+    <g clip-path="inset(0 0 0 0)">
+      <rect x="-20" y="-40" width="20" height="160" fill="#c0392b" transform="rotate(-30 0 60)"></rect>
+      <rect x="20" y="-40" width="20" height="160" fill="#c0392b" transform="rotate(-30 0 60)"></rect>
+      <rect x="60" y="-40" width="20" height="160" fill="#c0392b" transform="rotate(-30 0 60)"></rect>
+    </g>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">Y · YANKEE</text>
+  </g>
+  
+  <g transform="translate(420 20)">
+    <rect width="80" height="12" fill="#1d4775"></rect>
+    <rect y="12" width="80" height="12" fill="#fff"></rect>
+    <rect y="24" width="80" height="12" fill="#c0392b"></rect>
+    <rect y="36" width="80" height="12" fill="#fff"></rect>
+    <rect y="48" width="80" height="12" fill="#1d4775"></rect>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">C · CHARLIE</text>
+  </g>
+
+  
+  
+  <g transform="translate(20 140)">
+    <g>
+      <rect width="20" height="15" x="0" y="0" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="20" y="0" fill="#fff"></rect>
+      <rect width="20" height="15" x="40" y="0" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="60" y="0" fill="#fff"></rect>
+      <rect width="20" height="15" x="0" y="15" fill="#fff"></rect>
+      <rect width="20" height="15" x="20" y="15" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="40" y="15" fill="#fff"></rect>
+      <rect width="20" height="15" x="60" y="15" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="0" y="30" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="20" y="30" fill="#fff"></rect>
+      <rect width="20" height="15" x="40" y="30" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="60" y="30" fill="#fff"></rect>
+      <rect width="20" height="15" x="0" y="45" fill="#fff"></rect>
+      <rect width="20" height="15" x="20" y="45" fill="#1d4775"></rect>
+      <rect width="20" height="15" x="40" y="45" fill="#fff"></rect>
+      <rect width="20" height="15" x="60" y="45" fill="#1d4775"></rect>
+    </g>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">N · NOVEMBER</text>
+  </g>
+  
+  <g transform="translate(120 140)">
+    <polygon points="0,0 80,0 0,60" fill="#c0392b"></polygon>
+    <polygon points="80,0 80,60 0,60" fill="#e8b84a"></polygon>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">O · OSCAR</text>
+  </g>
+  
+  <g transform="translate(220 140)">
+    <rect width="80" height="60" fill="#1d4775"></rect>
+    <rect x="22" y="14" width="36" height="32" fill="#fff"></rect>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">P · PAPA</text>
+  </g>
+  
+  <g transform="translate(320 140)">
+    <rect width="80" height="60" fill="#e8b84a" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">Q · QUEBEC</text>
+  </g>
+  
+  <g transform="translate(420 140)">
+    <rect width="80" height="60" fill="#1d4775"></rect>
+    <rect x="10" y="8" width="60" height="44" fill="#fff"></rect>
+    <rect x="22" y="18" width="36" height="24" fill="#c0392b"></rect>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">W · WHISKEY</text>
+  </g>
+
+  
+  
+  <g transform="translate(20 260)">
+    <rect width="26" height="60" fill="#c0392b"></rect>
+    <rect x="26" width="28" height="60" fill="#fff"></rect>
+    <rect x="54" width="26" height="60" fill="#1d4775"></rect>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">T · TANGO</text>
+  </g>
+  
+  <g transform="translate(120 260)">
+    <rect width="40" height="60" fill="#fff"></rect>
+    <rect x="40" width="40" height="60" fill="#c0392b"></rect>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">H · HOTEL</text>
+  </g>
+  
+  <g transform="translate(220 260)">
+    <rect width="80" height="60" fill="#e8b84a"></rect>
+    <rect y="0" width="80" height="14" fill="#1d4775"></rect>
+    <rect y="46" width="80" height="14" fill="#1d4775"></rect>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">D · DELTA</text>
+  </g>
+  
+  <g transform="translate(320 260)">
+    <rect width="80" height="60" fill="#fff"></rect>
+    <polygon points="40,12 64,30 40,48 16,30" fill="#c0392b"></polygon>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">F · FOXTROT</text>
+  </g>
+  
+  <g transform="translate(420 260)">
+    <g>
+      <rect x="0" width="13.4" height="60" fill="#e8b84a"></rect>
+      <rect x="13.4" width="13.3" height="60" fill="#1d4775"></rect>
+      <rect x="26.7" width="13.3" height="60" fill="#e8b84a"></rect>
+      <rect x="40" width="13.3" height="60" fill="#1d4775"></rect>
+      <rect x="53.3" width="13.3" height="60" fill="#e8b84a"></rect>
+      <rect x="66.6" width="13.4" height="60" fill="#1d4775"></rect>
+    </g>
+    <rect width="80" height="60" fill="none" stroke="#0a2240"></rect>
+    <text class="lbl" x="40" y="80">G · GOLF</text>
+  </g>
+</svg>

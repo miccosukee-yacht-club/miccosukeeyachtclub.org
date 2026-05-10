@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Miccosukee Yacht Club — Design Tokens
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/Lora-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("/fonts/Lora-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tangerine";
+  src: url("/fonts/Tangerine-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tangerine";
+  src: url("/fonts/Tangerine-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Palette */
+  --navy-900: #0c1a1f;
+  --navy-800: #122a2f;
+  --navy-700: #1d3d42;
+  --navy-500: #355560;
+  --navy-200: #a8b8bd;
+  --navy-100: #d4dadc;
+
+  --sail-50:  #ece6d9;
+  --sail-100: #ddd5c4;
+  --sail-200: #c5bba6;
+
+  --sand-300: #b8a888;
+  --sand-500: #8a785a;
+  --teak-700: #5a4530;
+  --teak-900: #2d2218;
+
+  --brass-500: #8a6e3a;
+  --brass-600: #6b5428;
+  --brass-200: #c9b785;
+
+  --foam-300: #9ab0a8;
+  --foam-500: #4f6f68;
+  --grass-600: #3a5145;
+
+  --buoy-500: #9a4030;
+  --buoy-600: #7a3024;
+  --buoy-100: #d8b8ad;
+
+  --signal-yellow: #b89548;
+
+  /* Semantic */
+  --bg:             var(--sail-50);
+  --bg-elevated:    #f4eee2;
+  --bg-deep:        var(--navy-900);
+  --bg-deep-2:      var(--navy-800);
+  --bg-card:        #f6f1e6;
+  --bg-paper:       var(--sail-100);
+
+  --fg:             var(--navy-900);
+  --fg-muted:       #45565b;
+  --fg-subtle:      #78858a;
+  --fg-on-deep:     #e6dfcf;
+  --fg-on-deep-muted: #9aa7ab;
+
+  --accent:         var(--brass-500);
+  --accent-hover:   var(--brass-600);
+
+  --border:         #c9bfa8;
+  --border-strong:  #a89c83;
+  --border-deep:    #1f3a5c;
+  --rule:           var(--brass-500);
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --font-serif:   "Lora", "Georgia", serif;
+  --font-sans:    "Work Sans", "Helvetica Neue", system-ui, sans-serif;
+  --font-script:  "Tangerine", "Apple Chancery", cursive;
+  --font-mono:    ui-monospace, "SFMono-Regular", "Menlo", monospace;
+
+  --fs-overline: 0.72rem;
+  --fs-small:    0.84rem;
+  --fs-body:     1.0rem;
+  --fs-lead:     1.18rem;
+  --fs-h6:       1.1rem;
+  --fs-h5:       1.32rem;
+  --fs-h4:       1.62rem;
+  --fs-h3:       2.0rem;
+  --fs-h2:       2.6rem;
+  --fs-h1:       3.6rem;
+  --fs-display:  5.4rem;
+
+  --lh-tight:  1.08;
+  --lh-snug:   1.25;
+  --lh-body:   1.55;
+  --lh-loose:  1.7;
+
+  --tracking-tight:  -0.012em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.06em;
+  --tracking-xwide:  0.22em;
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --container:        1200px;
+  --container-narrow: 760px;
+
+  /* Radii */
+  --r-0:   0px;
+  --r-1:   2px;
+  --r-2:   4px;
+  --r-3:   8px;
+  --r-pill: 999px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(10, 34, 64, 0.08);
+  --shadow-2: 0 2px 6px rgba(10, 34, 64, 0.10), 0 1px 2px rgba(10, 34, 64, 0.06);
+  --shadow-3: 0 8px 24px rgba(10, 34, 64, 0.12), 0 2px 4px rgba(10, 34, 64, 0.06);
+  --shadow-inset-paper: inset 0 0 0 1px rgba(176, 138, 62, 0.18), inset 0 1px 0 rgba(255,255,255,0.5);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.5, 0, 0.2, 1);
+  --dur-fast:  140ms;
+  --dur-base:  220ms;
+  --dur-slow:  420ms;
+}

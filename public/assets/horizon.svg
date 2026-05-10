@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" role="img" aria-label="Distant horizon">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dde7f1"></stop>
+      <stop offset="0.7" stop-color="#f5edd9"></stop>
+      <stop offset="1" stop-color="#ebdfc1"></stop>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a6fa5"></stop>
+      <stop offset="1" stop-color="#0a2240"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="180" fill="url(#sky)"></rect>
+  <rect y="180" width="800" height="100" fill="url(#sea)"></rect>
+  
+  <g stroke="#b9cde0" stroke-width="0.6" fill="none" opacity="0.7">
+    <path d="M0,200 Q 100,196 200,200 T 400,200 T 600,200 T 800,200"></path>
+    <path d="M0,220 Q 120,216 240,220 T 480,220 T 720,220 T 800,220"></path>
+    <path d="M0,240 Q 140,236 280,240 T 560,240 T 800,240"></path>
+  </g>
+  
+  <g transform="translate(560 168)" opacity="0.85">
+    <polygon points="0,-22 0,2 18,2" fill="#fff"></polygon>
+    <polygon points="0,-22 0,2 -14,2" fill="#fbf7ee"></polygon>
+    <line x1="0" y1="2" x2="0" y2="-26" stroke="#0a2240" stroke-width="0.8"></line>
+    <path d="M -16,2 Q 0,8 16,2 L 12,8 L -12,8 Z" fill="#3a2614"></path>
+  </g>
+  
+  <circle cx="640" cy="80" r="28" fill="#e8d6a1" opacity="0.7"></circle>
+  <circle cx="640" cy="80" r="18" fill="#e8b84a" opacity="0.5"></circle>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" role="img" aria-label="Miccosukee Yacht Club">
+  <g transform="translate(0 8)">
+    
+    <g transform="translate(8 8)">
+      <circle cx="32" cy="32" r="30" fill="#0a2240" stroke="#b08a3e" stroke-width="1"></circle>
+      <g transform="translate(32 36)" fill="#e8d6a1">
+        <circle cx="0" cy="-14" r="2.2" fill="none" stroke="#e8d6a1" stroke-width="1.2"></circle>
+        <rect x="-0.8" y="-12" width="1.6" height="20" rx="0.5"></rect>
+        <rect x="-8" y="-8" width="16" height="1.6"></rect>
+        <path d="M -10,8 C -10,2 -4,0 0,2 L 0,7 C -4,5 -7,7 -8,11 Z M 10,8 C 10,2 4,0 0,2 L 0,7 C 4,5 7,7 8,11 Z"></path>
+      </g>
+    </g>
+    <text x="80" y="36" font-family="&#39;Cormorant Garamond&#39;, Garamond, serif" font-size="22" font-weight="600" letter-spacing="2" fill="#0a2240">MICCOSUKEE</text>
+    <text x="80" y="56" font-family="&#39;Cormorant Garamond&#39;, Garamond, serif" font-style="italic" font-size="14" letter-spacing="6" fill="#b08a3e">YACHT · CLUB</text>
+  </g>
+</svg>

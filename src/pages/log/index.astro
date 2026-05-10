@@ -1,0 +1,134 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Card from '~/components/ui/Card.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('log'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date) {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+---
+<BaseLayout
+  title="The Commodore's Log"
+  description="Official dispatches and observations from the Miccosukee Yacht Club. A record of voyages, protocols, and matters of note."
+  active="log"
+>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow-rule">Official Record</span>
+      <h1>The Commodore's Log</h1>
+      <p class="lead page-lead">
+        A running account of the Club's activities, observations, and proceedings.
+        Maintained in the interest of good order and institutional memory.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {entries.map((entry, i) => (
+        <Card
+          href={`/log/${entry.id}`}
+          featured={entry.data.featured}
+          class={`log-entry ${i < entries.length - 1 ? 'log-entry-border' : ''}`}
+        >
+          <div class="entry-meta">
+            <div class="entry-date">{formatDate(entry.data.date)}</div>
+            {entry.data.featured && <span class="entry-featured-tag">Featured</span>}
+          </div>
+          <h2 class="entry-title">{entry.data.title}</h2>
+          <p class="entry-excerpt">{entry.data.excerpt}</p>
+          <div class="entry-read">Read entry &rarr;</div>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-header {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  text-align: center;
+  padding-block: var(--space-9) var(--space-8);
+}
+.page-header .eyebrow-rule { color: var(--brass-200); }
+.page-header .eyebrow-rule::before, .page-header .eyebrow-rule::after { background: var(--brass-500); }
+.page-header h1 {
+  color: var(--sail-50);
+  margin-top: var(--space-4);
+  font-size: clamp(2rem, 4vw, var(--fs-h1));
+}
+.page-lead {
+  max-width: 54ch;
+  margin-inline: auto;
+  margin-top: var(--space-4);
+  color: var(--fg-on-deep-muted);
+}
+
+.log-entry {
+  margin-bottom: var(--space-5);
+}
+.log-entry-border {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-5);
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.entry-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.entry-date {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+}
+.entry-featured-tag {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--sail-50);
+  background: var(--brass-500);
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+}
+.entry-title {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-3);
+  line-height: var(--lh-snug);
+}
+.entry-excerpt {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--fg-muted);
+  line-height: var(--lh-loose);
+  max-width: 68ch;
+}
+.entry-read {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  margin-top: var(--space-4);
+}
+</style>

@@ -1,0 +1,317 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Button from '~/components/ui/Button.astro';
+import Card from '~/components/ui/Card.astro';
+import Badge from '~/components/ui/Badge.astro';
+import Ornament from '~/components/ui/Ornament.astro';
+import { getCollection } from 'astro:content';
+
+const logEntries = (await getCollection('log'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+function formatRomanDate(date: Date) {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+---
+<BaseLayout
+  title="Miccosukee Yacht Club"
+  description="Constituted at the Miccosukee Land Cooperative, the Club draws together persons of nautical inclination. Est. MMXXV."
+  active="home"
+>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="eyebrow-rule">Est. MMXXV &middot; Mic. FL</span>
+          <h1>An Establishment of the Highest Repute</h1>
+          <p class="lead">
+            Constituted at the Miccosukee Land Cooperative, the Club draws together
+            persons of nautical inclination — and one Party Barge of considerable repute.
+          </p>
+          <div class="hero-actions">
+            <Button href="/apply" variant="accent">Apply for Admission</Button>
+            <Button href="/about" variant="ghost-light">Tour the Club</Button>
+          </div>
+        </div>
+        <div class="hero-mark">
+          <img src="/assets/crest.svg" alt="Miccosukee Yacht Club crest" width="280" height="280" />
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- The Fleet -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow-rule">The Fleet</span>
+        <h2>Two Vessels, Considered &amp; Maintained</h2>
+      </div>
+
+      <div class="fleet-grid">
+        <Card href="/fleet/nomine-carens">
+          <div class="vessel-photo">
+            <img src="/assets/nomine-carens.jpg" alt="S/V Nomine Carens at the dock in Carrabelle" class="vessel-img" />
+          </div>
+          <div class="vessel-body">
+            <div class="vessel-badges">
+              <Badge tone="navy">Sail &middot; Catalina 309</Badge>
+              <Badge tone="paper">2007</Badge>
+            </div>
+            <h3 class="vessel-name">S/V Nomine Carens</h3>
+            <p class="vessel-desc">
+              Captain Joly's Catalina sloop, berthed in Carrabelle. A proper sail-driven yacht
+              with a diesel auxiliary, wing keel, and accommodations sufficient for a long weekend
+              at sea. Name pending committee formation.
+            </p>
+            <div class="vessel-specs">
+              <span>LOA 32'9"</span>
+              <span>BEAM 11'6"</span>
+              <span>DRAFT 4'4"</span>
+            </div>
+          </div>
+        </Card>
+
+        <Card href="/fleet/porkchop-express" featured={true}>
+          <div class="vessel-photo">
+            <img src="/assets/porkchop-express.jpg" alt="M.V. Porkchop Express on the trailer" class="vessel-img" />
+          </div>
+          <div class="vessel-body">
+            <div class="vessel-badges">
+              <Badge tone="brass">Pontoon &middot; Sun Tracker 22 DLX</Badge>
+              <Badge tone="paper">2023</Badge>
+            </div>
+            <h3 class="vessel-name">M.V. Porkchop Express</h3>
+            <p class="vessel-desc">
+              Captain Harris's flagship. Twenty-four feet of measured leisure, propelled by a
+              Mercury 150 outboard. Runs Lake Talquin and the St. Marks River. Comfortably
+              accommodates the entire club and several coolers besides.
+            </p>
+            <div class="vessel-specs">
+              <span>LOA 24'2"</span>
+              <span>BEAM 8'6"</span>
+              <span>POWER 150 hp</span>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <Ornament />
+
+  <!-- The Log -->
+  <section class="section section-paper">
+    <div class="container">
+      <div class="log-header">
+        <div>
+          <span class="eyebrow-rule">The Commodore's Log</span>
+          <h2>Latest Dispatches</h2>
+        </div>
+        <a href="/log" class="log-all">Read all entries &rarr;</a>
+      </div>
+
+      <div class="log-grid">
+        {logEntries.map((entry) => (
+          <Card href={`/log/${entry.id}`}>
+            <div class="log-date">{formatRomanDate(entry.data.date)}</div>
+            <h4 class="log-title">{entry.data.title}</h4>
+            <p class="log-excerpt">{entry.data.excerpt}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership CTA -->
+  <section class="section section-deep">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="eyebrow-rule cta-eyebrow">The Membership</span>
+        <h2 class="cta-heading">Of Modest Numbers, of Considered Character</h2>
+        <p class="cta-lead">
+          The Club presently numbers four members in good standing. Applications for admission
+          are reviewed by the Membership Committee at its sole and unhurried discretion.
+        </p>
+        <Button href="/apply" variant="accent">Apply for Admission</Button>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+/* Hero */
+.hero {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  padding-top: var(--space-10);
+  padding-bottom: 0;
+  overflow: hidden;
+  position: relative;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-8);
+  align-items: center;
+  padding-bottom: var(--space-9);
+}
+.hero-text { max-width: 600px; }
+.hero-text .eyebrow-rule { color: var(--brass-200); }
+.hero-text .eyebrow-rule::before,
+.hero-text .eyebrow-rule::after { background: var(--brass-500); }
+.hero-text h1 {
+  color: var(--sail-50);
+  font-size: clamp(2.4rem, 5vw, var(--fs-display));
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.hero-text .lead { color: var(--fg-on-deep-muted); max-width: 52ch; }
+.hero-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  flex-wrap: wrap;
+}
+.hero-mark {
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+.hero-horizon {
+  width: 100%;
+  opacity: 0.35;
+  margin-top: -24px;
+}
+.hero-horizon img { width: 100%; display: block; }
+
+/* Fleet */
+.section-head {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+.section-head h2 { margin-top: var(--space-4); }
+.fleet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+.vessel-photo {
+  height: 240px;
+  background: var(--navy-800);
+  border-radius: var(--r-1) var(--r-1) 0 0;
+  margin: calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) 0 calc(-1 * var(--space-6));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vessel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.vessel-body { padding-top: var(--space-5); }
+.vessel-badges { display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap; }
+.vessel-name { font-size: var(--fs-h4); margin-bottom: var(--space-3); }
+.vessel-desc { font-family: var(--font-serif); color: var(--fg-muted); font-size: 15px; line-height: var(--lh-loose); }
+.vessel-specs {
+  display: flex;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+
+/* Log section */
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.log-header h2 { margin-top: var(--space-3); }
+.log-all {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--brass-500);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.log-all:hover { color: var(--navy-700); }
+.log-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.log-date {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  margin-bottom: var(--space-2);
+}
+.log-title {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+}
+.log-excerpt {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--fg-muted);
+  line-height: var(--lh-loose);
+}
+
+/* CTA */
+.cta-inner {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.cta-eyebrow { color: var(--brass-200); }
+.cta-eyebrow::before, .cta-eyebrow::after { background: var(--brass-500); }
+.cta-heading {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  color: var(--sail-50);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.cta-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--brass-200);
+  font-size: 18px;
+  line-height: var(--lh-loose);
+  max-width: 50ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-mark { display: none; }
+  .fleet-grid { grid-template-columns: 1fr; }
+  .log-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .log-grid { grid-template-columns: 1fr; }
+}
+</style>

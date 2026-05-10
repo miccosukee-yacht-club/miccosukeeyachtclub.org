@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  active?: 'home' | 'about' | 'log' | 'apply';
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Miccosukee Yacht Club — Est. MMXXV. Lake Miccosukee, Florida.',
+  active,
+  ogImage = '/og-default.png',
+} = Astro.props;
+
+const fullTitle = title.includes('Miccosukee') ? title : `${title} — Miccosukee Yacht Club`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://miccosukeeyachtclub.org').toString();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <script is:inline>
+    document.documentElement.classList.add('js-reveal');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/assets/crest.svg" />
+  <link rel="canonical" href={canonical} />
+
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+</head>
+<body>
+  <Nav active={active} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+
+  <script is:inline>
+    (function () {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      const targets = document.querySelectorAll('main h1, main h2');
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(function(el) { el.classList.add('is-revealed'); });
+        return;
+      }
+      const io = new IntersectionObserver(function(entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            entries[i].target.classList.add('is-revealed');
+            io.unobserve(entries[i].target);
+          }
+        }
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+      targets.forEach(function(el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

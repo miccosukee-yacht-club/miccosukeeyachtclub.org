@@ -1,0 +1,265 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Ornament from '~/components/ui/Ornament.astro';
+---
+<BaseLayout
+  title="Apply for Admission"
+  description="Applications for membership in the Miccosukee Yacht Club are reviewed by the Membership Committee at its sole and unhurried discretion."
+  active="apply"
+>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow-rule">Membership</span>
+      <h1>Apply for Admission</h1>
+      <p class="lead page-lead">
+        The Club presently numbers four members in good standing. Should you believe yourself
+        suited to our company, the Committee invites your application.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="narrow">
+
+      <div class="notice">
+        <div class="notice-eyebrow">A Note from the Committee</div>
+        <p>
+          Membership in the Miccosukee Yacht Club is extended by invitation only. The submission
+          of an application does not constitute an offer of membership, nor does it oblige the
+          Committee to acknowledge receipt in a timely manner. Membership carries no fee,
+          no guarantee of vessel access, and no formal privileges beyond the satisfaction of belonging.
+        </p>
+        <p style="margin-bottom: 0;">
+          The Committee meets irregularly, at lake-side, and by text message.
+        </p>
+      </div>
+
+      <Ornament />
+
+      <form class="application-form" name="membership-application" method="POST" action="/apply/submitted">
+        <input type="hidden" name="form-name" value="membership-application" />
+
+        <fieldset>
+          <legend>The Applicant</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="first-name">Given Name</label>
+              <input type="text" id="first-name" name="first-name" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="last-name">Family Name</label>
+              <input type="text" id="last-name" name="last-name" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Correspondence Address</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="electronic mail preferred" />
+          </div>
+
+          <div class="field">
+            <label for="location">Port of Record <span class="field-note">(city, state)</span></label>
+            <input type="text" id="location" name="location" placeholder="Tallahassee, FL" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Nautical Standing</legend>
+
+          <div class="field">
+            <label for="experience">Relevant Experience</label>
+            <select id="experience" name="experience">
+              <option value="">Select one</option>
+              <option value="none">None — I am learning</option>
+              <option value="passenger">Passenger aboard friends' vessels</option>
+              <option value="recreational">Recreational boater, power</option>
+              <option value="recreational-sail">Recreational boater, sail</option>
+              <option value="licensed">Documented mariner or licensed captain</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="vessel">
+              Do you own or operate a vessel?
+              <span class="field-note">(ownership is not required for membership)</span>
+            </label>
+            <input type="text" id="vessel" name="vessel" placeholder="e.g., 2019 Boston Whaler 170 Montauk" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>The Application Proper</legend>
+
+          <div class="field">
+            <label for="statement">
+              Statement of Purpose
+              <span class="field-note">(in your own words; brevity is appreciated)</span>
+            </label>
+            <textarea id="statement" name="statement" rows="6"
+              placeholder="Describe your interest in the Club and any qualities you believe the Membership Committee should weigh in its deliberations."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="referral">Referred by a Member? <span class="field-note">(optional)</span></label>
+            <input type="text" id="referral" name="referral" placeholder="Member's name" />
+          </div>
+        </fieldset>
+
+        <div class="form-footer">
+          <p class="form-disclaimer">
+            By submitting this form, you acknowledge that the Committee's decision is final, that no
+            correspondence will be entered into, and that the Club's sole communication channel is
+            a group chat of indeterminate activity.
+          </p>
+          <button type="submit" class="btn-submit">Submit Application</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-header {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  text-align: center;
+  padding-block: var(--space-9) var(--space-8);
+}
+.page-header .eyebrow-rule { color: var(--brass-200); }
+.page-header .eyebrow-rule::before, .page-header .eyebrow-rule::after { background: var(--brass-500); }
+.page-header h1 {
+  color: var(--sail-50);
+  margin-top: var(--space-4);
+  font-size: clamp(2rem, 4vw, var(--fs-h1));
+}
+.page-lead {
+  max-width: 54ch;
+  margin-inline: auto;
+  margin-top: var(--space-4);
+  color: var(--fg-on-deep-muted);
+}
+
+/* Notice */
+.notice {
+  background: var(--bg-paper);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--brass-500);
+  padding: var(--space-6);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--fg-muted);
+  line-height: var(--lh-loose);
+}
+.notice-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-overline);
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  margin-bottom: var(--space-4);
+}
+
+/* Form */
+.application-form fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--r-1);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.application-form legend {
+  font-family: var(--font-sans);
+  font-size: var(--fs-overline);
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  padding-inline: var(--space-3);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-5);
+}
+.field:last-child { margin-bottom: 0; }
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.field label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  letter-spacing: var(--tracking-wide);
+}
+.field-note {
+  font-weight: 400;
+  color: var(--fg-subtle);
+  font-size: 12px;
+}
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: 10px 14px;
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+  width: 100%;
+  outline: none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--brass-500);
+  box-shadow: 0 0 0 3px rgba(138, 110, 58, 0.12);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+.form-disclaimer {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--fg-subtle);
+  max-width: 48ch;
+  line-height: var(--lh-loose);
+}
+.btn-submit {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  background: var(--brass-500);
+  color: var(--navy-900);
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--r-3);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.btn-submit:hover { background: var(--brass-600); color: var(--sail-50); }
+
+@media (max-width: 600px) {
+  .field-row { grid-template-columns: 1fr; }
+  .form-footer { flex-direction: column; }
+}
+</style>

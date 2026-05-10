@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Miccosukee Yacht Club crest">
+  <defs>
+    <pattern id="rope" patternUnits="userSpaceOnUse" width="10" height="6" patternTransform="rotate(0)">
+      <path d="M0,3 Q2.5,0 5,3 T10,3" fill="none" stroke="#b08a3e" stroke-width="1.4" stroke-linecap="round"></path>
+    </pattern>
+    <radialGradient id="brass" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#e8d6a1"></stop>
+      <stop offset="55%" stop-color="#b08a3e"></stop>
+      <stop offset="100%" stop-color="#8c6c2c"></stop>
+    </radialGradient>
+  </defs>
+
+  
+  <circle cx="120" cy="120" r="112" fill="none" stroke="url(#rope)" stroke-width="6"></circle>
+  <circle cx="120" cy="120" r="106" fill="none" stroke="#8c6c2c" stroke-width="0.6" opacity="0.5"></circle>
+
+  
+  <circle cx="120" cy="120" r="98" fill="#0a2240"></circle>
+  <circle cx="120" cy="120" r="98" fill="none" stroke="#b08a3e" stroke-width="1.2"></circle>
+
+  
+  <defs>
+    <path id="topArc" d="M 34,120 A 86,86 0 0 1 206,120" fill="none"></path>
+    <path id="botArc" d="M 36,128 A 84,84 0 0 0 204,128" fill="none"></path>
+  </defs>
+  <text font-family="&#39;Cormorant Garamond&#39;, Garamond, serif" font-size="13" letter-spacing="1.5" fill="#e8d6a1" font-weight="600">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">MICCOSUKEE · YACHT · CLUB</textPath>
+  </text>
+  <text font-family="&#39;Cormorant Garamond&#39;, Garamond, serif" font-style="italic" font-size="12" letter-spacing="2" fill="#b08a3e">
+    <textPath href="#botArc" startOffset="50%" text-anchor="middle">EST. MMXXV  ·  MIC. FL</textPath>
+  </text>
+
+  
+  <g transform="translate(120 130)" fill="url(#brass)" stroke="#3a2614" stroke-width="0.8">
+    
+    <circle cx="0" cy="-44" r="6.5" fill="none" stroke="url(#brass)" stroke-width="3"></circle>
+    
+    <rect x="-2.2" y="-38" width="4.4" height="56" rx="1"></rect>
+    
+    <rect x="-22" y="-30" width="44" height="4" rx="1.5"></rect>
+    <rect x="-22" y="-30" width="6" height="4"></rect>
+    <rect x="16" y="-30" width="6" height="4"></rect>
+    
+    <path d="M -28,18&#xA;             C -28,4 -16,-2 -2,4&#xA;             L -2,16&#xA;             C -10,12 -16,14 -18,22 Z"></path>
+    <path d="M 28,18&#xA;             C 28,4 16,-2 2,4&#xA;             L 2,16&#xA;             C 10,12 16,14 18,22 Z"></path>
+    
+    <path d="M -28,18 l -6,-2 l 4,8 z"></path>
+    <path d="M 28,18 l 6,-2 l -4,8 z"></path>
+    
+    <circle cx="0" cy="-22" r="3.2"></circle>
+  </g>
+
+  
+  <g fill="#b08a3e">
+    <polygon points="44,120 47,127 54,127 49,131 51,138 44,134 37,138 39,131 34,127 41,127"></polygon>
+    <polygon points="196,120 199,127 206,127 201,131 203,138 196,134 189,138 191,131 186,127 193,127"></polygon>
+  </g>
+
+  
+  <g stroke="#b08a3e" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.85">
+    <line x1="78" y1="186" x2="120" y2="166"></line>
+    <line x1="162" y1="186" x2="120" y2="166"></line>
+    <ellipse cx="74" cy="190" rx="4" ry="2.3" fill="#b08a3e"></ellipse>
+    <ellipse cx="166" cy="190" rx="4" ry="2.3" fill="#b08a3e"></ellipse>
+  </g>
+</svg>

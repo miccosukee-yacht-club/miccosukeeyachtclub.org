@@ -1,0 +1,231 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Ornament from '~/components/ui/Ornament.astro';
+import Badge from '~/components/ui/Badge.astro';
+---
+<BaseLayout
+  title="M.V. Porkchop Express"
+  description="The M.V. Porkchop Express — a 2023 Sun Tracker Party Barge 22 DLX, flagship of the Miccosukee Yacht Club. Lake Talquin and the St. Marks River."
+  active="about"
+>
+
+  <section class="vessel-header">
+    <div class="container">
+      <a href="/#fleet" class="back-link">&larr; The Fleet</a>
+      <div class="vessel-badges">
+        <Badge tone="brass">Pontoon &middot; Sun Tracker 22 DLX</Badge>
+        <Badge tone="paper">2023</Badge>
+        <Badge tone="paper">Lake Talquin &middot; St. Marks River</Badge>
+      </div>
+      <h1>M.V. Porkchop Express</h1>
+      <p class="lead vessel-lead">
+        The Club's flagship. A 2023 Sun Tracker Party Barge 22 DLX with a Mercury 150
+        four-stroke outboard. Operated by Captain Harris on Lake Talquin and the St. Marks River.
+        Comfortably accommodates the entire club and several coolers besides.
+      </p>
+    </div>
+  </section>
+
+  <section class="vessel-photo-full">
+    <img src="/assets/porkchop-express.jpg" alt="M.V. Porkchop Express on the trailer" />
+  </section>
+
+  <section class="section">
+    <div class="narrow">
+
+      <h2>The Vessel</h2>
+      <p>
+        The Sun Tracker Party Barge 22 DLX is a recreational pontoon built on an all-welded
+        aluminum platform with 24-inch diameter marine alloy pontoon logs, a full-width swim
+        deck, and enough seating for eleven persons before anyone starts making decisions
+        about personal space. Sun Tracker has been producing pontoon boats since 1978 and
+        backs the hull with a limited lifetime warranty, which is the sort of confidence that
+        comes from building the same basic thing for several decades and learning from it.
+      </p>
+      <p>
+        The Club's example was acquired in 2023 and fitted with the Mercury 150 four-stroke
+        outboard &mdash; the top option in the lineup, and the correct choice for a vessel
+        whose operating waters include the St. Marks River, where conditions can require
+        prompt acceleration. In that configuration, the boat is estimated at 29 to 38 miles
+        per hour, though the Club has not found it necessary to establish the upper end of
+        that range.
+      </p>
+
+      <Ornament />
+
+      <h2>On the Water</h2>
+      <p>
+        The Porkchop Express operates primarily on Lake Talquin and the St. Marks River,
+        both in Leon and Wakulla counties. Lake Talquin, formed by the impoundment of the
+        Ochlockonee River, offers 8,800 acres of fishable, cruisable water at depths
+        sufficient for pontoon operation and the occasional ambitious cooler deployment.
+        The St. Marks River runs south through Wakulla County to the Gulf, with a character
+        somewhat more serious than Lake Talquin and cypress trees that justify the transit.
+      </p>
+      <p>
+        The 22 DLX is not a performance vessel in any category that performance sailors
+        would recognize. It is, however, an exceptionally capable leisure platform. The
+        powered 10-foot Bimini deploys at the push of a button. The patented STOW MORE
+        seat system provides underseat and seat-back storage sufficient to organize a
+        properly provisioned Club outing. The Bluetooth stereo system has not yet been
+        the subject of any formal Club complaints, though the season is young.
+      </p>
+
+      <Ornament />
+
+      <h2>On the Name</h2>
+      <p>
+        The vessel is named for the <em>Porkchop Express</em>, the fictional 18-wheel truck
+        driven by Jack Burton in the 1986 John Carpenter film <em>Big Trouble in Little China</em>.
+        Captain Harris has not provided a formal explanation for this choice, which the Club
+        considers explanation enough.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="container">
+      <div class="specs-header">
+        <span class="eyebrow-rule">Technical Register</span>
+        <h2>Specifications</h2>
+      </div>
+      <div class="specs-grid">
+        <div class="specs-group">
+          <div class="specs-group-label">Dimensions</div>
+          <dl>
+            <div class="spec-row"><dt>LOA</dt><dd>24' 2"</dd></div>
+            <div class="spec-row"><dt>Deck Length</dt><dd>22' 1"</dd></div>
+            <div class="spec-row"><dt>Beam</dt><dd>8' 6"</dd></div>
+            <div class="spec-row"><dt>Log Diameter</dt><dd>24"</dd></div>
+            <div class="spec-row"><dt>Log Length</dt><dd>22' 3"</dd></div>
+          </dl>
+        </div>
+        <div class="specs-group">
+          <div class="specs-group-label">Weight & Capacity</div>
+          <dl>
+            <div class="spec-row"><dt>Dry Weight</dt><dd>2,080 lbs</dd></div>
+            <div class="spec-row"><dt>Max Persons</dt><dd>11</dd></div>
+            <div class="spec-row"><dt>Max Weight</dt><dd>2,200 lbs</dd></div>
+            <div class="spec-row"><dt>Fuel Capacity</dt><dd>32.1 gal</dd></div>
+          </dl>
+        </div>
+        <div class="specs-group">
+          <div class="specs-group-label">Mechanical</div>
+          <dl>
+            <div class="spec-row"><dt>Engine</dt><dd>Mercury 150 L</dd></div>
+            <div class="spec-row"><dt>Type</dt><dd>Four-stroke outboard</dd></div>
+            <div class="spec-row"><dt>Power</dt><dd>150 hp</dd></div>
+            <div class="spec-row"><dt>Est. Speed</dt><dd>29 &ndash; 38 mph</dd></div>
+          </dl>
+        </div>
+        <div class="specs-group">
+          <div class="specs-group-label">The Club's Vessel</div>
+          <dl>
+            <div class="spec-row"><dt>Year</dt><dd>2023</dd></div>
+            <div class="spec-row"><dt>Captain</dt><dd>J. B. Harris</dd></div>
+            <div class="spec-row"><dt>Home Waters</dt><dd>Lake Talquin</dd></div>
+            <div class="spec-row"><dt>Also Runs</dt><dd>St. Marks River</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.vessel-header {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  padding-block: var(--space-9) var(--space-8);
+}
+.back-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--brass-200);
+  text-decoration: none;
+  margin-bottom: var(--space-5);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.back-link:hover { color: var(--sail-50); }
+.vessel-badges { display: flex; gap: var(--space-2); margin-bottom: var(--space-4); flex-wrap: wrap; }
+.vessel-header h1 {
+  color: var(--sail-50);
+  font-size: clamp(2.4rem, 5vw, var(--fs-display));
+  margin-bottom: var(--space-4);
+}
+.vessel-lead {
+  color: var(--fg-on-deep-muted);
+  max-width: 58ch;
+}
+
+.vessel-photo-full {
+  background: var(--navy-900);
+  height: 480px;
+  overflow: hidden;
+}
+.vessel-photo-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.9;
+}
+
+.specs-header {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+.specs-header h2 { margin-top: var(--space-4); }
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.specs-group-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-overline);
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+dl { margin: 0; }
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: 6px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.spec-row:last-child { border-bottom: none; }
+dt {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+dd {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--fg);
+  margin: 0;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .specs-grid { grid-template-columns: 1fr 1fr; }
+  .vessel-photo-full { height: 300px; }
+}
+@media (max-width: 600px) {
+  .specs-grid { grid-template-columns: 1fr; }
+}
+</style>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Button from '~/components/ui/Button.astro';
+---
+<BaseLayout
+  title="Page Not Found"
+  description="The requested page could not be located."
+>
+  <section class="page">
+    <div class="container">
+      <div class="inner">
+        <div class="error-code">404</div>
+        <span class="eyebrow-rule">Navigation Error</span>
+        <h1>Off the Chart</h1>
+        <p class="lead">
+          The page you are seeking does not appear on any chart in the Club's possession.
+          The Committee regrets any inconvenience.
+        </p>
+        <div class="actions">
+          <Button href="/" variant="accent">Return to Port</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.page {
+  background: var(--bg-deep);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-10);
+}
+.container { width: 100%; }
+.inner {
+  max-width: 480px;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--fg-on-deep);
+}
+.error-code {
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 300;
+  color: var(--brass-500);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+  opacity: 0.7;
+}
+.eyebrow-rule { color: var(--brass-200); }
+.eyebrow-rule::before, .eyebrow-rule::after { background: var(--brass-500); }
+h1 {
+  color: var(--sail-50);
+  font-size: var(--fs-h2);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.lead { color: var(--fg-on-deep-muted); max-width: 44ch; margin-inline: auto; }
+.actions {
+  margin-top: var(--space-6);
+  display: flex;
+  justify-content: center;
+}
+</style>

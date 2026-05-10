@@ -1,0 +1,41 @@
+---
+export interface Props {
+  tone?: 'navy' | 'brass' | 'paper' | 'buoy';
+  class?: string;
+}
+const { tone = 'navy', class: className = '' } = Astro.props;
+---
+<span class={`badge badge-${tone} ${className}`}><slot /></span>
+
+<style>
+.badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+.badge-navy {
+  background: var(--navy-800);
+  color: var(--fg-on-deep);
+}
+.badge-brass {
+  background: color-mix(in srgb, var(--brass-200) 30%, var(--bg-card));
+  color: var(--brass-600);
+  border: 1px solid var(--brass-200);
+}
+.badge-paper {
+  background: var(--bg-paper);
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+}
+.badge-buoy {
+  background: color-mix(in srgb, var(--buoy-100) 40%, var(--bg-card));
+  color: var(--buoy-600);
+  border: 1px solid var(--buoy-100);
+}
+</style>

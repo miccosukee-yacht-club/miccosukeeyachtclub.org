@@ -1,0 +1,311 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Ornament from '~/components/ui/Ornament.astro';
+import Card from '~/components/ui/Card.astro';
+---
+<BaseLayout
+  title="About the Club"
+  description="The Founding, the Fleet, and the Commodore. Miccosukee Yacht Club — constituted MMXXV, Miccosukee Land Coop, Florida."
+  active="about"
+>
+
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <img src="/assets/compass-rose.svg" alt="" width="100" height="100" class="page-compass" />
+      <span class="eyebrow-rule">Concerning the Club</span>
+      <h1>The Founding, the Fleet, the Commodore</h1>
+    </div>
+  </section>
+
+  <!-- Founding narrative -->
+  <section class="section">
+    <div class="narrow">
+      <p class="lead" style="text-align: center; margin-bottom: var(--space-7);">
+        The Miccosukee Yacht Club was constituted in the year of our reckoning Two Thousand and
+        Twenty-Six, in consequence of a remark made over an iced beverage, which the present
+        Commodore took rather more seriously than was perhaps intended.
+      </p>
+
+      <h2 id="founding">Article I &mdash; The Founding</h2>
+      <p>
+        What began as a passing jest among friends has, by deliberate action and the procurement of
+        this very digital quarter, become a private nautical society. The Club takes its name from
+        the Miccosukee Land Cooperative, where several members reside &mdash; one of Florida's
+        oldest intentional communities, established in 1973 on 344 acres of northeastern Leon County.
+        The Coop is named after the small town of Miccosukee. So is the lake nearby. The roads
+        inside the Coop are named after Beatles songs. The Club has not yet held a meeting on
+        Abbey Road, but considers this a future agenda item.
+      </p>
+      <p>
+        There is a lake on the property. It is shallow, heavily vegetated, and unsuitable for
+        any vessel drawing more than a kayak paddle. The Club has accepted this gracefully and
+        sails elsewhere, returning home to a community of friends in the country who are largely
+        unbothered by the whole arrangement.
+      </p>
+      <p>
+        The Club admits members on the invitation of the Membership Committee, accepts no fees
+        from anyone &mdash; but reserves the right to do both at any time.
+      </p>
+
+      <h2 id="fleet" style="margin-top: var(--space-8);">Article II &mdash; The Fleet</h2>
+      <p>
+        The Club's flagship is the <em>M.V. Porkchop Express</em>, a 2023 Sun Tracker 28-foot
+        Party Barge with a Mercury 150 outboard, operated by Captain Harris. She runs primarily
+        on Lake Talquin and the St. Marks River, both of which have the good sense to be deep
+        enough for her draft.
+      </p>
+      <p>
+        The Club's sail-driven vessel is the <em>S/V Nomine Carens</em>, a 2007 Catalina 309
+        sloop owned and captained by Rod Joly, berthed in Carrabelle. She operates on open water
+        and has not yet been asked to navigate Lake Miccosukee, a request no one intends to make.
+        Her permanent name remains before the Naming Committee. The Committee has not yet convened.
+        In fact, there is no Naming Committee. One should be formed.
+      </p>
+      <p>
+        Both vessels are maintained under individual ownership. The Club does not hold title to
+        either vessel and is not responsible for their insurance, storage, or the inevitable small
+        repairs that follow any outing of consequence.
+      </p>
+
+      <Ornament />
+
+      <h2 id="commodore">Article III &mdash; The Commodore</h2>
+      <p>
+        The office of Commodore is currently held by J. B. Harris, who appointed himself to the
+        position at the founding and has not been seriously challenged. The incumbent retains
+        office until a member in good standing issues a formal challenge. Challenges are settled
+        by a single hand of high-stakes Texas Hold 'em. At the challenger's election, a
+        sword-fight to the death may be substituted. The Club does not own swords.
+      </p>
+      <p>
+        The Commodore is responsible for the calendar, the flag, and the general dignity of the
+        proceedings. He does not have additional authority in matters not covered by these Articles.
+        The Articles do not cover most matters. This has not been a problem.
+      </p>
+
+      <Ornament />
+
+      <h2 id="membership">Article IV &mdash; The Membership</h2>
+      <p>
+        The Club presently numbers four members in good standing, each accompanied by a first
+        mate of considerably better judgment:
+      </p>
+
+      <div class="roster">
+        <div class="roster-entry roster-entry-photo">
+          <img src="/assets/commodore-hero.png" alt="J. B. Harris, Commodore" class="roster-photo" />
+          <div class="roster-entry-text">
+            <div class="roster-name">J. B. Harris</div>
+            <div class="roster-title">Commodore &middot; Captain, <em>M.V. Porkchop Express</em></div>
+            <div class="roster-mate">First Mate: Melanie</div>
+          </div>
+        </div>
+        <div class="roster-entry roster-entry-photo">
+          <img src="/assets/rod-captain.png" alt="Rod Joly at the helm" class="roster-photo" style="object-position: 62% 8%;" />
+          <div class="roster-entry-text">
+            <div class="roster-name">Rod Joly</div>
+            <div class="roster-title">Captain, <em>S/V Nomine Carens</em></div>
+            <div class="roster-mate">First Mate: Michelle</div>
+          </div>
+        </div>
+        <div class="roster-entry roster-entry-photo">
+          <img src="/assets/fairymack-captain.png" alt="Fairy Mack Lane" class="roster-photo" style="object-position: center 20%;" />
+          <div class="roster-entry-text">
+            <div class="roster-name">"Fairy" Mack Lane</div>
+            <div class="roster-title">Member in Good Standing</div>
+            <div class="roster-mate">First Mate: Cassie</div>
+          </div>
+        </div>
+        <div class="roster-entry roster-entry-photo">
+          <img src="/assets/mike-captain.png" alt="Mike Humelsine" class="roster-photo" style="object-position: center 15%;" />
+          <div class="roster-entry-text">
+            <div class="roster-name">Mike Humelsine</div>
+            <div class="roster-title">Member in Good Standing</div>
+            <div class="roster-mate">First Mate: Chelsea</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: var(--space-6);">
+        The Club's culture centers on good beer, fine cigars, semi-honest stories, and the company
+        of people who know when to be quiet on the water. Spouses and first mates are considered
+        full participants in all Club activities and substantially better at reading charts.
+      </p>
+
+      <div class="signature-block">
+        <span class="script-sig">&mdash; J. B. Harris, Commodore</span>
+        <div class="signature-title">Founding Member &middot; Anno I &middot; Self-Appointed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-paper">
+    <div class="container">
+      <div class="stats-grid">
+        <Card>
+          <div class="stat-number">IV</div>
+          <div class="stat-label">Members in good standing</div>
+        </Card>
+        <Card>
+          <div class="stat-number">II</div>
+          <div class="stat-label">Vessels in the fleet</div>
+        </Card>
+        <Card>
+          <div class="stat-number">MMXXV</div>
+          <div class="stat-label">Year of constitution</div>
+        </Card>
+        <Card>
+          <div class="stat-number">0</div>
+          <div class="stat-label">Circumnavigations attempted</div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signal flags decoration -->
+  <section class="section section-deep flags-section">
+    <div class="container">
+      <div class="flags-inner">
+        <img src="/assets/signal-flags.svg" alt="International signal flags" class="flags-img" />
+        <div class="flags-caption">
+          <span class="eyebrow-rule" style="color: var(--brass-200);">The Signal Flags</span>
+          <p style="color: var(--fg-on-deep-muted); font-style: italic; margin-top: var(--space-3); max-width: 42ch;">
+            The Club maintains a full set of International Code of Signals flags, sufficient for all
+            occasions of ceremony and several of mild alarm.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-header {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  text-align: center;
+  padding-block: var(--space-10) var(--space-8);
+}
+.page-compass {
+  margin-inline: auto;
+  margin-bottom: var(--space-5);
+  opacity: 0.8;
+}
+.page-header .eyebrow-rule { color: var(--brass-200); }
+.page-header .eyebrow-rule::before, .page-header .eyebrow-rule::after { background: var(--brass-500); }
+.page-header h1 {
+  color: var(--sail-50);
+  margin-top: var(--space-4);
+  font-size: clamp(2rem, 4vw, var(--fs-h1));
+}
+
+.roster {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+.roster-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--brass-500);
+  padding: var(--space-5);
+}
+.roster-entry-photo {
+  padding: 0;
+  overflow: hidden;
+}
+.roster-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.roster-entry-text {
+  padding: var(--space-5);
+}
+.roster-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-h5);
+  font-weight: 500;
+  color: var(--fg);
+}
+.roster-title {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.roster-mate {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  margin-top: var(--space-3);
+}
+
+.signature-block { margin-top: var(--space-7); }
+.signature-title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-xwide);
+  text-transform: uppercase;
+  color: var(--brass-600);
+  margin-top: var(--space-2);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 500;
+  color: var(--brass-500);
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-top: var(--space-3);
+}
+
+.flags-section { padding-block: var(--space-8); }
+.flags-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+.flags-img {
+  max-height: 120px;
+  opacity: 0.7;
+  filter: brightness(1.2) sepia(0.2);
+}
+.flags-caption .eyebrow-rule::before,
+.flags-caption .eyebrow-rule::after { background: var(--brass-500); }
+
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .roster { grid-template-columns: 1fr; }
+  .flags-inner { flex-direction: column; text-align: center; }
+}
+</style>
