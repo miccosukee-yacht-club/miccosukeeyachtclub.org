@@ -49,12 +49,12 @@
 
 :root {
   /* Palette */
-  --navy-900: #0c1a1f;
-  --navy-800: #122a2f;
-  --navy-700: #1d3d42;
-  --navy-500: #355560;
-  --navy-200: #a8b8bd;
-  --navy-100: #d4dadc;
+  --navy-900: #18333d;
+  --navy-800: #21434e;
+  --navy-700: #2e5764;
+  --navy-500: #486b78;
+  --navy-200: #b0bfc4;
+  --navy-100: #d8dee0;
 
   --sail-50:  #ece6d9;
   --sail-100: #ddd5c4;
@@ -90,8 +90,8 @@
   --fg:             var(--navy-900);
   --fg-muted:       #45565b;
   --fg-subtle:      #78858a;
-  --fg-on-deep:     #e6dfcf;
-  --fg-on-deep-muted: #9aa7ab;
+  --fg-on-deep:     #ece6d9;
+  --fg-on-deep-muted: #b6c2c6;
 
   --accent:         var(--brass-500);
   --accent-hover:   var(--brass-600);
