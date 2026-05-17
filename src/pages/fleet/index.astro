@@ -1,0 +1,170 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Card from '~/components/ui/Card.astro';
+import Badge from '~/components/ui/Badge.astro';
+---
+<BaseLayout
+  title="The Fleet"
+  description="The vessels of the Miccosukee Yacht Club: S/V Nomine Carens, M.V. Porkchop Express, and M.V. Hush Puppy. Three boats, considered and maintained."
+  active="about"
+>
+
+  <section class="page-header">
+    <div class="container">
+      <img src="/assets/compass-rose.svg" alt="" width="100" height="100" class="page-compass" />
+      <span class="eyebrow-rule">The Register</span>
+      <h1>The Fleet</h1>
+      <p class="lead page-lead">
+        Three vessels in the keeping of three captains. A proper sloop, a pontoon of measured
+        leisure, and a jon boat for the slow water.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fleet-grid">
+        <Card href="/fleet/nomine-carens" featured={true}>
+          <div class="vessel-photo">
+            <img src="/assets/nomine-carens.jpg" alt="S/V Nomine Carens at the dock in Carrabelle" class="vessel-img" />
+          </div>
+          <div class="vessel-body">
+            <div class="vessel-badges">
+              <Badge tone="navy">Sail &middot; Catalina 309</Badge>
+              <Badge tone="paper">2007</Badge>
+              <Badge tone="paper">Carrabelle</Badge>
+            </div>
+            <h3 class="vessel-name">S/V Nomine Carens</h3>
+            <p class="vessel-desc">
+              The Club's flagship. Captain Joly's Catalina sloop, berthed in Carrabelle. A proper
+              sail-driven yacht with a diesel auxiliary, fin keel, and accommodations sufficient
+              for a long weekend at sea. Name pending committee formation.
+            </p>
+            <div class="vessel-specs">
+              <span>LOA 32'9"</span>
+              <span>BEAM 11'6"</span>
+              <span>DRAFT 4'4"</span>
+            </div>
+          </div>
+        </Card>
+
+        <Card href="/fleet/porkchop-express">
+          <div class="vessel-photo">
+            <img src="/assets/porkchop-express.jpg" alt="M.V. Porkchop Express on the trailer" class="vessel-img" />
+          </div>
+          <div class="vessel-body">
+            <div class="vessel-badges">
+              <Badge tone="navy">Pontoon &middot; Sun Tracker 22 DLX</Badge>
+              <Badge tone="paper">2023</Badge>
+              <Badge tone="paper">St. Marks</Badge>
+            </div>
+            <h3 class="vessel-name">M.V. Porkchop Express</h3>
+            <p class="vessel-desc">
+              Captain Harris's pontoon. Twenty-four feet of measured leisure, propelled by a
+              Mercury 150 outboard. Native to the St. Marks, at home on Lake Talquin in the
+              cooler months, and known to brave the salt for a day at K-Tower.
+            </p>
+            <div class="vessel-specs">
+              <span>LOA 24'2"</span>
+              <span>BEAM 8'6"</span>
+              <span>POWER 150 hp</span>
+            </div>
+          </div>
+        </Card>
+
+        <Card href="/fleet/hush-puppy">
+          <div class="vessel-photo">
+            <img src="/assets/macks-jon-side.jpg" alt="Captain Mack's camo Xpress jon boat on the trailer" class="vessel-img" />
+          </div>
+          <div class="vessel-body">
+            <div class="vessel-badges">
+              <Badge tone="navy">Jon Boat &middot; Xpress</Badge>
+              <Badge tone="paper">Mud Motor</Badge>
+              <Badge tone="paper">Backwater</Badge>
+            </div>
+            <h3 class="vessel-name">M.V. Hush Puppy</h3>
+            <p class="vessel-desc">
+              Captain Mack's jon boat, and the Club's smallest vessel. A camo Xpress aluminum
+              hull with a surface-drive mud motor. Native to the creeks and backwaters of the
+              Big Bend, where the chartplotter gives up and patience takes over.
+            </p>
+            <div class="vessel-specs">
+              <span>FLAT BOTTOM</span>
+              <span>TILLER</span>
+              <span>MUD MOTOR</span>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-header {
+  background: var(--bg-deep);
+  color: var(--fg-on-deep);
+  text-align: center;
+  padding-block: var(--space-10) var(--space-8);
+}
+.page-compass {
+  margin-inline: auto;
+  margin-bottom: var(--space-5);
+  opacity: 0.8;
+}
+.page-header .eyebrow-rule { color: var(--brass-200); }
+.page-header .eyebrow-rule::before, .page-header .eyebrow-rule::after { background: var(--brass-500); }
+.page-header h1 {
+  color: var(--sail-50);
+  margin-top: var(--space-4);
+  font-size: clamp(2rem, 4vw, var(--fs-h1));
+}
+.page-lead {
+  color: var(--fg-on-deep-muted);
+  max-width: 56ch;
+  margin-inline: auto;
+  margin-top: var(--space-4);
+}
+
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.vessel-photo {
+  height: 240px;
+  background: var(--navy-800);
+  border-radius: var(--r-1) var(--r-1) 0 0;
+  margin: calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) 0 calc(-1 * var(--space-6));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vessel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.vessel-body { padding-top: var(--space-5); }
+.vessel-badges { display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap; }
+.vessel-name { font-size: var(--fs-h4); margin-bottom: var(--space-3); }
+.vessel-desc { font-family: var(--font-serif); color: var(--fg-muted); font-size: 15px; line-height: var(--lh-loose); }
+.vessel-specs {
+  display: flex;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-subtle);
+}
+
+@media (max-width: 1100px) {
+  .fleet-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .fleet-grid { grid-template-columns: 1fr; }
+}
+</style>
