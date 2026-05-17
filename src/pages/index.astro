@@ -51,7 +51,7 @@ function formatRomanDate(date: Date) {
     <div class="container">
       <div class="section-head">
         <span class="eyebrow-rule">The Fleet</span>
-        <h2>Two Vessels, Considered &amp; Maintained</h2>
+        <h2>Three Vessels, Considered &amp; Maintained</h2>
       </div>
 
       <div class="fleet-grid">
@@ -99,6 +99,31 @@ function formatRomanDate(date: Date) {
               <span>LOA 24'2"</span>
               <span>BEAM 8'6"</span>
               <span>POWER 150 hp</span>
+            </div>
+          </div>
+        </Card>
+
+        <Card href="/fleet/hush-puppy">
+          <div class="vessel-photo">
+            <img src="/assets/macks-jon-side.jpg" alt="Captain Mack's camo Xpress jon boat on the trailer" class="vessel-img" />
+          </div>
+          <div class="vessel-body">
+            <div class="vessel-badges">
+              <Badge tone="navy">Jon Boat &middot; Xpress</Badge>
+              <Badge tone="paper">Mud Motor</Badge>
+              <Badge tone="paper">Backwater</Badge>
+            </div>
+            <h3 class="vessel-name">M.V. Hush Puppy</h3>
+            <p class="vessel-desc">
+              Captain Mack's jon boat, and the Club's smallest vessel. A camo Xpress
+              aluminum hull with a surface-drive mud motor. Native to the creeks and
+              backwaters of the Big Bend, where the chartplotter gives up and patience
+              takes over.
+            </p>
+            <div class="vessel-specs">
+              <span>FLAT BOTTOM</span>
+              <span>TILLER</span>
+              <span>MUD MOTOR</span>
             </div>
           </div>
         </Card>
@@ -201,7 +226,7 @@ function formatRomanDate(date: Date) {
 .section-head h2 { margin-top: var(--space-4); }
 .fleet-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
 }
 .vessel-photo {
@@ -307,6 +332,9 @@ function formatRomanDate(date: Date) {
   margin-bottom: var(--space-6);
 }
 
+@media (max-width: 1100px) {
+  .fleet-grid { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-mark { display: none; }
